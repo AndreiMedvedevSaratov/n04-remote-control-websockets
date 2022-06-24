@@ -4,8 +4,8 @@ import * as dotenv from 'dotenv'
 import { resolve } from 'path'
 import { cwd } from 'process'
 
-// import { interval } from './helpers/interval'
-// import { connection } from './handlers/connection'
+import { handle_intervals } from './helpers/handle_intervals'
+// import { handle_connection } from './handlers/handle_connection'
 
 dotenv.config({ path: resolve(cwd(), '.env') })
 
@@ -18,8 +18,8 @@ httpServer.listen(HTTP_PORT).on('listening', () => {
 
 export const ws = new WebSocketServer({ port: WS_PORT })
 
-ws.on('connection', connection())
+ws.on('connection', handle_connection())
 
 ws.on('close', () => {
-    clearInterval(interval)
+    clearInterval(handle_intervals)
 })
