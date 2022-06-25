@@ -1,6 +1,6 @@
 import { ws } from '../index'
 
-export const handle_intervals = setInterval(() => {
+export const handleIntervals = setInterval(() => {
     ws.clients.forEach((websocket: any) => {
         if (websocket.isAlive === false) return websocket.terminate()
 
