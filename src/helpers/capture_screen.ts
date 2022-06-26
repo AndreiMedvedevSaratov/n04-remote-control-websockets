@@ -8,7 +8,7 @@ export async function captureScreen(
     height: number
 ): Promise<Jimp> {
     return new Promise((resolve) => {
-        const bitmap = screen.capture(x, y, width, height)
+        const bitmap = screen.capture(x - 100, y - 100, width, height)
         const image = new Jimp(bitmap.width, bitmap.height)
 
         let pos = 0

@@ -35,7 +35,7 @@ export default function router(): IRouter {
         draw_rectangle: (width: number, height: number) => {
             drawRectangle(x, y, width, height)
         },
-        capture_screen: async () => {
+        prnt_scrn: async () => {
             const image = await captureScreen(x, y, 200, 200)
             const base64 = await image.getBase64Async(image.getMIME())
 
