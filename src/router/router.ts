@@ -1,4 +1,5 @@
 import robot from 'robotjs'
+import { captureScreen } from '../helpers/capture_screen'
 import { IRouter } from '../types/index'
 import {
     drawCircle,
@@ -33,6 +34,12 @@ export default function router(): IRouter {
         },
         draw_rectangle: (width: number, height: number) => {
             drawRectangle(x, y, width, height)
+        },
+        capture_screen: async () => {
+            const image = await captureScreen(x, y, 200, 200)
+            const base64 = await image.getBase64Async(image.getMIME())
+
+            return base64.substring(22)
         },
     }
 }

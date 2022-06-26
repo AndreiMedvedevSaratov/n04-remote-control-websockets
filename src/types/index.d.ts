@@ -14,4 +14,5 @@ export interface IRouter {
     draw_circle: (radius: number) => void
     draw_square: (length: number) => void
     draw_rectangle: (width: number, height: number) => void
+    capture_screen: () => Promise<string>
 }
