@@ -1,0 +1,33 @@
+{
+	"env": {
+		"es2021": true,
+		"node": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:prettier/recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"sourceType": "module",
+		"project": "./tsconfig.json",
+		"ecmaVersion": "latest"
+	},
+	"plugins": [
+		"prettier",
+		"@typescript-eslint"
+	],
+	"rules": {
+		"prettier/prettier": [
+			"error",
+			{
+				"tabWidth": 4,
+				"semi": false,
+				"singleQuote": true,
+				"trailingComma": "es5",
+				"endOfLine": "auto"
+			}
+		]
+	}
+}
