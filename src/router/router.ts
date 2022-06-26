@@ -1,5 +1,6 @@
 import robot from 'robotjs'
 import { IRouter } from '../types/index'
+import drawCircle from './../helpers/draw_figures'
 
 export default function router(): IRouter {
     const { x, y } = robot.getMousePos()
@@ -19,6 +20,9 @@ export default function router(): IRouter {
         },
         mouse_position: () => {
             return `${x},${y}`
+        },
+        draw_circle: (radius: number) => {
+            drawCircle(x, y, radius)
         },
     }
 }
