@@ -1,6 +1,10 @@
 import robot from 'robotjs'
 import { IRouter } from '../types/index'
-import drawCircle from './../helpers/draw_figures'
+import {
+    drawCircle,
+    drawRectangle,
+    drawSquare,
+} from './../helpers/draw_figures'
 
 export default function router(): IRouter {
     const { x, y } = robot.getMousePos()
@@ -23,6 +27,12 @@ export default function router(): IRouter {
         },
         draw_circle: (radius: number) => {
             drawCircle(x, y, radius)
+        },
+        draw_square: (length: number) => {
+            drawSquare(x, y, length)
+        },
+        draw_rectangle: (width: number, height: number) => {
+            drawRectangle(x, y, width, height)
         },
     }
 }

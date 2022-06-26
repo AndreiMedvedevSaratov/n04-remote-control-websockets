@@ -1,6 +1,6 @@
 import { dragMouse, mouseToggle, moveMouse } from 'robotjs'
 
-export default function drawCircle(x: number, y: number, r: number) {
+export function drawCircle(x: number, y: number, r: number) {
     moveMouse(x - r, y)
     mouseToggle('down')
 
@@ -11,5 +11,23 @@ export default function drawCircle(x: number, y: number, r: number) {
         dragMouse(dx, dy)
     }
 
+    mouseToggle('up')
+}
+
+export function drawSquare(x: number, y: number, dx: number) {
+    mouseToggle('down')
+    dragMouse(x + dx, y)
+    dragMouse(x + dx, y + dx)
+    dragMouse(x, y + dx)
+    dragMouse(x, y)
+    mouseToggle('up')
+}
+
+export function drawRectangle(x: number, y: number, dx: number, dy: number) {
+    mouseToggle('down')
+    dragMouse(x + dx, y)
+    dragMouse(x + dx, y + dy)
+    dragMouse(x, y + dy)
+    dragMouse(x, y)
     mouseToggle('up')
 }
